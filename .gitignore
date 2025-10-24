@@ -1,0 +1,62 @@
+# Binaries for programs and plugins
+/bin/
+/build/
+/dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of the go coverage tool
+coverage.out
+
+# Dependency directories
+/vendor/
+
+# Go workspace
+go.work
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Environment and secret files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Generated files
+*.gen.go
+
+# Temporary files
+*.tmp
+
+# Test and debug
+*.prof
+
+# Ignore compiled JS/CSS/etc if present
+node_modules/
+
+# CI and build artifacts
+ci-output/
+
+# Local tool binaries
+.bin/
+
+# Terraform state (if present)
+*.tfstate
+*.tfstate.*
+
+# JetBrains
+/out/
+
+# Misc
+Thumbs.db
