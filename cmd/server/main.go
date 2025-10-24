@@ -1,20 +1,24 @@
 package main
 
 import (
-"net/http"
- "log"
- "time"
- "github.com/patricetekeda/library-course-api/internal/httpapi"
+	"log"
+	"net/http"
+	"time"
+
+	"github.com/patricetekeda/library-course-api/internal/courses"
+	"github.com/patricetekeda/library-course-api/internal/httpapi"
 )
 
+func main() {
+	// Initialize in-memory courses store and inject into routes.
+	store := courses.NewStore()
 
-func main () {
-	srv := &http.Server {
-		Addr: ":8080",
-		Handler: httpapi.Routes(),
-		ReadTimeout: 5 * time.Second, 
+	srv := &http.Server{
+		Addr:         ":8080",
+		Handler:      httpapi.Routes(store),
+		ReadTimeout:  5 * time.Second,
 		WriteTimeout: 10 * time.Second,
-		IdleTimeout: 60 * time.Second,
+		IdleTimeout:  60 * time.Second,
 	}
 
 	log.Println("Server is running at http://localhost:8080")
